@@ -1,16 +1,16 @@
 import json
 from pathlib import Path
 
-basis_ordner = Path(__file__).resolve().parent.parent
-config_datei = basis_ordner / "config.json"
+projekt_ordner = Path(__file__).resolve().parent.parent
+pfad_zur_config = projekt_ordner / "config.json"
 
 
 def lade_config():
-    with config_datei.open("r", encoding="utf-8") as datei:
-        daten = json.load(datei)
+    with pfad_zur_config.open("r", encoding="utf-8") as datei:
+        einstellungen = json.load(datei)
 
-    daten["base_dir"] = str(basis_ordner)
-    daten["status_file"] = str(basis_ordner / daten["status_file"])
-    daten["log_file"] = str(basis_ordner / daten["log_file"])
+    einstellungen["base_dir"] = str(projekt_ordner)
+    einstellungen["status_file"] = str(projekt_ordner / einstellungen["status_file"])
+    einstellungen["log_file"] = str(projekt_ordner / einstellungen["log_file"])
 
-    return daten
+    return einstellungen
