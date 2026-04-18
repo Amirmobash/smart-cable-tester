@@ -1,0 +1,14 @@
+[Unit]
+Description=Amir Orange Cable Tester
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/Desktop/amir_cable_tester_project
+ExecStart=/bin/bash /home/pi/Desktop/amir_cable_tester_project/starter.sh
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
