@@ -1,0 +1,12 @@
+{
+  "project_name": "Amir Orange Cable Tester",
+  "author": "Amir Mobasheraghdam",
+  "inspired_by": "Nauman3S/RPi-Cable-Tester",
+  "version": "2.0.0",
+  "theme": {
+    "primary": "#ff7a00",
+    "secondary": "#ffffff",
+    "accent": "#ffb266",
+    "text": "#1f1f1f"
+  }
+}
