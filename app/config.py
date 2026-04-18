@@ -1,18 +1,16 @@
-from __future__ import annotations
-
 import json
 from pathlib import Path
-from typing import Any, Dict
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-CONFIG_PATH = BASE_DIR / "config.json"
+basis_ordner = Path(__file__).resolve().parent.parent
+config_datei = basis_ordner / "config.json"
 
 
-def load_config() -> Dict[str, Any]:
-    with CONFIG_PATH.open("r", encoding="utf-8") as f:
-        config = json.load(f)
+def lade_config():
+    with config_datei.open("r", encoding="utf-8") as datei:
+        daten = json.load(datei)
 
-    config["base_dir"] = str(BASE_DIR)
-    config["status_file"] = str(BASE_DIR / config["status_file"])
-    config["log_file"] = str(BASE_DIR / config["log_file"])
-    return config
+    daten["base_dir"] = str(basis_ordner)
+    daten["status_file"] = str(basis_ordner / daten["status_file"])
+    daten["log_file"] = str(basis_ordner / daten["log_file"])
+
+    return daten
