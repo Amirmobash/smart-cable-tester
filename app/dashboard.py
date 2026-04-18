@@ -1,13 +1,12 @@
-from __future__ import annotations
-
 import json
 from pathlib import Path
 
 from flask import Flask, jsonify, render_template
 
-from config import load_config
+from config import lade_config
 
-config = load_config()
+einstellungen = lade_config()
+
 app = Flask(
     __name__,
     template_folder=str(Path(__file__).parent / "templates"),
@@ -16,25 +15,34 @@ app = Flask(
 
 
 @app.route("/")
-def index():
-    return render_template("index.html", config=config)
+def startseite():
+    return render_template("index.html", config=einstellungen)
 
 
 @app.route("/api/status")
-def api_status():
-    status_path = Path(config["status_file"])
-    if not status_path.exists():
+def status_abrufen():
+    status_datei = Path(einstellungen["status_file"])
+
+    if not status_datei.exists():
         return jsonify(
             {
-                "project_name": config["project_name"],
-                "author": config["author"],
+                "project_name": einstellungen["project_name"],
+                "author": einstellungen["author"],
                 "overall_ok": False,
-                "message": "Status file not created yet. Start app/main.py first.",
+                "message": "Noch keine Statusdatei gefunden. Bitte zuerst app/main.py starten.",
                 "channels": [],
             }
         )
-    return jsonify(json.loads(status_path.read_text(encoding="utf-8")))
+
+    with status_datei.open("r", encoding="utf-8") as datei:
+        daten = json.load(datei)
+
+    return jsonify(daten)
 
 
 if __name__ == "__main__":
-    app.run(host=config["dashboard_host"], port=int(config["dashboard_port"]), debug=False)
+    app.run(
+        host=einstellungen["dashboard_host"],
+        port=int(einstellungen["dashboard_port"]),
+        debug=False,
+    )
