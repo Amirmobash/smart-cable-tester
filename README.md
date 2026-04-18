@@ -1,55 +1,56 @@
-# 🔶 RPi Cable Tester
+# 🔶 smart-cable-tester
 
-Ein intelligenter Kabeltester basierend auf Raspberry Pi GPIO.
+Ein moderner und zuverlässiger Kabeltester auf Basis von Raspberry Pi GPIO.
 
-👨‍💻 Entwickelt und überarbeitet von **Amir Mobasheraghdam**
-
----
-
-## 📌 Beschreibung
-
-Dieses Projekt ist ein **einfacher, aber leistungsfähiger Kabeltester**, der mit einem Raspberry Pi betrieben wird.  
-Er prüft die **Verbindungen (Continuity)** zwischen mehreren Pins und zeigt den Status über LEDs und ein Web-Dashboard an.
-
-Das System eignet sich für:
-- Netzwerkkabel (LAN / Ethernet)
-- Kabelbäume (Harness)
-- Allgemeine Leitungsprüfungen
+👨‍💻 Entwickelt und optimiert von **Amir Mobasheraghdam**
 
 ---
 
-## ⚙️ Features
+## 🚀 Übersicht
 
-- ✅ Automatische Kabelprüfung
-- ✅ GPIO-basierte Pin-Erkennung
-- ✅ LED-Statusanzeige
-- ✅ Web-Interface (Orange/Weiß Design)
-- ✅ Echtzeit-Überwachung
-- ✅ Einfach erweiterbar
+Der **amir-rpi-cable-tester** ist ein leichtgewichtiges Open-Source-Projekt zur Prüfung von Kabelverbindungen.
+Er ermöglicht eine schnelle und präzise Analyse von Leitungen direkt über die GPIO-Pins eines Raspberry Pi.
+
+Das System eignet sich besonders für:
+
+* 🔌 Netzwerkkabel (LAN / Ethernet)
+* 🔧 Kabelbäume (Harness Testing)
+* ⚡ Allgemeine Leitungsprüfungen
+
+---
+
+## ⚙️ Funktionen
+
+* ✅ Automatische Kabelprüfung
+* ✅ GPIO-basierte Signalverarbeitung
+* ✅ LED-Statusanzeige (optional)
+* ✅ Web-Dashboard (Orange/Weiß Design)
+* ✅ Echtzeit-Statusanzeige
+* ✅ Einfach erweiterbar
 
 ---
 
 ## 🧰 Hardware Anforderungen
 
-- Raspberry Pi (empfohlen: Pi 3 oder Pi 4)
-- Jumper Kabel
-- LEDs (optional)
-- Widerstände (220Ω empfohlen)
-- Testkabel / Harness
+* Raspberry Pi (empfohlen: Pi 3 / Pi 4)
+* Jumper Kabel
+* LEDs (optional)
+* Widerstände (ca. 220Ω)
+* Testkabel oder Kabelbaum
 
 ---
 
-## 🔌 GPIO Belegung
+## 🔌 GPIO Konfiguration
 
 ```python
-Connector1Pins = [4, 17, 27, 22, 10, 9]   # Output
-Connector2Pins = [11, 5, 6, 13, 19, 26]   # Input
-Connector3Pins = [18, 23, 24, 25, 8, 7]   # Input
-````
+Connector1Pins = [4, 17, 27, 22, 10, 9]
+Connector2Pins = [11, 5, 6, 13, 19, 26]
+Connector3Pins = [18, 23, 24, 25, 8, 7]
+```
 
 ---
 
-## 🚀 Installation
+## 📦 Installation
 
 ```bash
 sudo apt update
@@ -57,14 +58,14 @@ sudo apt install python3 python3-pip
 pip3 install flask
 ```
 
-Projekt klonen:
+Repository klonen:
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/amir-rpi-cable-tester.git
 cd amir-rpi-cable-tester
 ```
 
-Starten:
+Anwendung starten:
 
 ```bash
 python3 app.py
@@ -74,10 +75,10 @@ python3 app.py
 
 ## 🖥️ Web Interface
 
-Öffne im Browser:
+Im Browser öffnen:
 
 ```
-http://<IP-DEINES-RASPBERRY-PI>:5000
+http://<RASPBERRY-PI-IP>:5000
 ```
 
 ---
@@ -110,32 +111,30 @@ sudo systemctl start cable_tester
 
 ---
 
-## 📊 Funktionsweise
+## 🧠 Funktionsweise
 
-Das System:
+1. Output-Pins werden nacheinander aktiviert
+2. Input-Pins werden ausgelesen
+3. Verbindungen werden überprüft
+4. Ergebnis wird angezeigt:
 
-1. Setzt Output-Pins HIGH/LOW
-2. Liest Input-Pins
-3. Prüft korrekte Verbindungen
-4. Zeigt Ergebnis:
-
-   * LED (Hardware)
-   * Web Dashboard
+* LED (Hardware)
+* Web-Dashboard
 
 ---
 
 ## 🎨 Design
 
-* Theme: **Orange / Weiß**
-* Minimalistisch & übersichtlich
-* Mobile kompatibel
+* Orange / Weiß Theme
+* Klar und minimalistisch
+* Auch für mobile Geräte geeignet
 
 ---
 
 ## ⚠️ Hinweise
 
-* Nicht für Hochspannung verwenden!
-* Nur für Niederspannungs-Test (GPIO)
+❗ Nur für Niederspannung geeignet
+❗ Nicht für Hochspannung verwenden
 
 ---
 
@@ -147,7 +146,7 @@ MIT License
 
 ## 🙌 Credits
 
-Original Idee basierend auf einem Open-Source Projekt
-Weiterentwickelt und redesigned von:
+Basierend auf Ideen aus der Open-Source-Community
+Weiterentwickelt und modernisiert von:
 
 👉 **Amir Mobasheraghdam**
