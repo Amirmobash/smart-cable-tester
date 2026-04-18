@@ -1,5 +1,5 @@
 [Unit]
-Description=Amir Orange Cable Tester
+Description=Amir Cable Tester Service
 After=network.target
 
 [Service]
