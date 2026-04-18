@@ -1,0 +1,20 @@
+{
+  "project_name": "Amir Orange Cable Tester",
+  "author": "Amir Mobasheraghdam",
+  "led_pin": 12,
+  "connector_1_pins": [4, 17, 27, 22, 10, 9],
+  "connector_2_pins": [11, 5, 6, 13, 19, 26],
+  "connector_3_pins": [18, 23, 24, 25, 8, 7],
+  "poll_interval_seconds": 0.25,
+  "status_file": "logs/status.json",
+  "log_file": "logs/main.log",
+  "dashboard_host": "0.0.0.0",
+  "dashboard_port": 8080,
+  "theme": {
+    "name": "orange_white",
+    "primary": "#ff7a00",
+    "secondary": "#ffffff",
+    "soft": "#fff3e8",
+    "dark_text": "#1f1f1f"
+  }
+}
