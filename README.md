@@ -1,5 +1,11 @@
 # 🔶 Smart Cable Tester for Raspberry Pi
 
+
+<p align="center"><img src="docs/images/raspberry-pi-gpio-cable-continuity-tester.svg" alt="Raspberry Pi GPIO based cable tester continuity checking illustration" width="960"/></p>
+
+<sub>Illustrative overview; not a verified device photograph, measured CAD export, or tested safety design.</sub>
+
+
 A modern, lightweight and reliable cable tester based on Raspberry Pi GPIO.
 
 Developed and optimized by **Amir Mobasheraghdam**
